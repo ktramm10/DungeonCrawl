@@ -138,6 +138,7 @@
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeBuilder.cpp" />
     <ClCompile Include="MazeFactory.cpp" />
+    <ClCompile Include="RandomMazeBuilder.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="StandardMazeBuilder.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="MazeBuilder.h" />
     <ClInclude Include="MazeFactory.h" />
     <ClInclude Include="MazeTypes.h" />
+    <ClInclude Include="RandomMazeBuilder.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="StandardMazeBuilder.h" />
     <ClInclude Include="Wall.h" />

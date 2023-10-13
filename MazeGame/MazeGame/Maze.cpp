@@ -1,5 +1,11 @@
 #include "Maze.h"
 #include "Room.h"
+Maze::Maze()
+{
+}
+	
+int Maze::nextRoomNumber = 1;
+
 void Maze::AddRoom(Room* r)
 {
 	RoomList.push_back(r);

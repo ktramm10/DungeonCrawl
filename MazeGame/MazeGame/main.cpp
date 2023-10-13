@@ -11,6 +11,7 @@
 #include"GameWidgets.h"
 #include"GameState.h"
 #include"GameMenus.h"
+#include"RandomMazeBuilder.h"
 
 /*
 * Function Prototyping
@@ -34,7 +35,14 @@ int main()
 	GameState* currentGame = InitalizeGameComponents();
 	currentGame->GetGameWidgets()->TitleCard();
 	MainMenu(gameMenus);
-	GameLoop(currentGame);
+	//GameLoop(currentGame);
+
+	RandomMazeBuilder* rmb = new RandomMazeBuilder(currentGame);
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << rmb->GetLinkedRoom() << std::endl;
+	}
+	
 
 }
 
