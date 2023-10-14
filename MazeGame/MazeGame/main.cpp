@@ -17,7 +17,7 @@
 * Function Prototyping
 */
 
-Maze* CreateMaze(MazeBuilder* builder);
+Maze* CreateMaze(MazeBuilder* builder, int numOfRooms);
 GameState* InitalizeGameComponents();
 void GameLoop(GameState* game);
 EDirection InterpretInput(GameState* game);
@@ -35,40 +35,38 @@ int main()
 	GameState* currentGame = InitalizeGameComponents();
 	currentGame->GetGameWidgets()->TitleCard();
 	MainMenu(gameMenus);
-	//GameLoop(currentGame);
+	GameLoop(currentGame);
 
-	RandomMazeBuilder* rmb = new RandomMazeBuilder(currentGame);
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << rmb->GetLinkedRoom() << std::endl;
-	}
 	
 
 }
 
-Maze* CreateMaze(MazeBuilder* builder)
+Maze* CreateMaze(RandomMazeBuilder* builder, int numOfRooms)
 {
 	builder->BuildMaze();
-	builder->BuildRoom(1);
-	builder->BuildRoom(2);
-	builder->BuildRoom(3);
-	builder->BuildRoom(4);
-	builder->BuildRoom(5);
-	builder->BuildRoom(6);
-	builder->BuildDoor(1, 2, ED_East);
-	builder->BuildDoor(1, 3, ED_West);
-	builder->BuildDoor(2, 4, ED_North);
-	builder->BuildDoor(3, 5, ED_West);
-	builder->BuildDoor(5, 6, ED_South);
 
+	for (int i = 0; i <= numOfRooms; i++)
+	{
+		if (i == 0)
+		{
+			std::cout << "Room Number Created: " << builder->GetMaze()->nextRoomNumber << std::endl;
+			builder->BuildRoom();
+			
+		}
+		else
+		{
+			std::cout << "Room Number Created: " << builder->GetMaze()->nextRoomNumber << std::endl;
+			builder->BuildRoom();
+			builder->BuildRandomDoor();
+		}
+	}
 	return builder->GetMaze();
 }
 
 GameState* InitalizeGameComponents()
 {
-	StandardMazeBuilder* s_Builder = new StandardMazeBuilder();
-	EnchantedMazeBuilder* e_Builder = new EnchantedMazeBuilder();
-	Maze* gameMaze = CreateMaze(e_Builder);
+	RandomMazeBuilder* r_Builder = new RandomMazeBuilder();
+	Maze* gameMaze = CreateMaze(r_Builder, 10);
 	Explorer* playerCharacter = new Explorer(gameMaze);
 	GameWidgets* gameWidgets = new GameWidgets(playerCharacter);
 	GameState* gamestate = new GameState(gameMaze, playerCharacter, gameWidgets);

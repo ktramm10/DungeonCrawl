@@ -1,15 +1,22 @@
 #pragma once
 #include "StandardMazeBuilder.h"
-class GameState;
+#include <random>
 
-class RandomMazeBuilder : public StandardMazeBuilder
+enum Edirection;
+
+class RandomMazeBuilder : public MazeBuilder
 {
 public:
-	RandomMazeBuilder(GameState* game);
+	RandomMazeBuilder();
+	virtual void BuildMaze() override;
 	virtual void BuildRoom();
-	virtual void BuildRandomDoor(Room* roomTo);
+	virtual void BuildRandomDoor();
 	virtual int GetLinkedRoom();
+	virtual bool IsRoomFull(Room* room);
+	virtual Maze* GetMaze() override { return currentMaze; }
+	virtual EDirection SelectRandomSide(Room* room);
 
 private:
-	GameState* currentGame;
+	Maze* currentMaze;
+	std::default_random_engine eng;
 };

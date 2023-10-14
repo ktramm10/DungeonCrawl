@@ -28,6 +28,7 @@ void Explorer::Move(EDirection direction)
 	if (direction != EDirection::ED_NULL)
 	{
 		CurrentRoomLocation->GetSide(direction)->Enter(this);
+		SayLocation();
 	}
 }
 

@@ -64,7 +64,7 @@
       <Filter>Source Files\Private</Filter>
     </ClCompile>
     <ClCompile Include="RandomMazeBuilder.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

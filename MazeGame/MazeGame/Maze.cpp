@@ -4,7 +4,7 @@ Maze::Maze()
 {
 }
 	
-int Maze::nextRoomNumber = 1;
+int Maze::nextRoomNumber = 0;
 
 void Maze::AddRoom(Room* r)
 {
