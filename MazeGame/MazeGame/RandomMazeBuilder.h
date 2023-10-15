@@ -3,6 +3,7 @@
 #include <random>
 
 enum Edirection;
+class Interactables;
 
 class RandomMazeBuilder : public MazeBuilder
 {
@@ -15,6 +16,7 @@ public:
 	virtual bool IsRoomFull(Room* room);
 	virtual Maze* GetMaze() override { return currentMaze; }
 	virtual EDirection SelectRandomSide(Room* room);
+	virtual Interactables*  GenerateRandomLoot();
 
 private:
 	Maze* currentMaze;

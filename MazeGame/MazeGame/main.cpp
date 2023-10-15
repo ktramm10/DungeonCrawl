@@ -76,8 +76,6 @@ GameState* InitalizeGameComponents()
 
 void GameLoop(GameState* game)
 {
-	
-
 	while (game->GetIsRunning() && game->GetPlayerCharacter()->GetHealth() > 0)
 	{
 		EDirection direction = ED_NULL;
@@ -88,9 +86,7 @@ void GameLoop(GameState* game)
 			direction = InterpretInput(game);
 			game->GetPlayerCharacter()->Move(direction);
 		}
-
 	}
-
 	std::cout << "Game Over!" << std::endl;
 }
 

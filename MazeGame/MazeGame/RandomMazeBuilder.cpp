@@ -9,6 +9,8 @@
 #include <vector>
 #include <random>
 #include <chrono>
+#include "MazeTypes.h"
+#include "Coin.h"
 
 RandomMazeBuilder::RandomMazeBuilder()
 {
@@ -23,13 +25,14 @@ void RandomMazeBuilder::BuildMaze()
 
 void RandomMazeBuilder::BuildRoom()
 {
-	Room* newRoom = new Room(currentMaze->nextRoomNumber);
+	Room* newRoom = new Room(currentMaze->nextRoomNumber, GenerateRandomLoot());
 	currentMaze->AddRoom(newRoom);
 	
 	newRoom->SetSide(ED_North, new Wall);
 	newRoom->SetSide(ED_South, new Wall);
 	newRoom->SetSide(ED_East, new Wall);
 	newRoom->SetSide(ED_West, new Wall);
+
 	currentMaze->nextRoomNumber += 1;
 }
 
@@ -131,6 +134,20 @@ EDirection RandomMazeBuilder::SelectRandomSide(Room* room)
 		}
 	}
 	return directionResult;
+}
+
+Interactables* RandomMazeBuilder::GenerateRandomLoot()
+{
+	std::uniform_int_distribution<int> uni(0, 2);
+	switch (uni(eng))
+	{
+	case 0:
+		return new Coin();
+		break;
+	default:
+		return 0;
+		break;
+	}
 }
 	
 

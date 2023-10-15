@@ -8,6 +8,12 @@ Room::Room(int roomNo)
 	roomNumber = roomNo;
 }
 
+Room::Room(int roomNo, Interactables* loot)
+{
+	roomNumber = roomNo;
+	roomLoot = loot;
+}
+
 Mapsite* Room::GetSide(EDirection e) const
 {
 	switch (e)

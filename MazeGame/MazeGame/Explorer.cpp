@@ -4,6 +4,7 @@
 #include "MazeTypes.h"
 #include "Door.h"
 #include "GameState.h"
+#include "Interactables.h"
 
 Explorer::Explorer(Maze* maze)
 {
@@ -11,6 +12,7 @@ Explorer::Explorer(Maze* maze)
 	CurrentRoomLocation = maze->RoomNo(1);
 	health = maxHealth;
 	magicPoints = maxMagicPoints;
+	CoinsCollected = 0;
 }
 void Explorer::SayLocation()
 {
@@ -28,6 +30,7 @@ void Explorer::Move(EDirection direction)
 	if (direction != EDirection::ED_NULL)
 	{
 		CurrentRoomLocation->GetSide(direction)->Enter(this);
+		CheckForLoot();
 		SayLocation();
 	}
 }
@@ -40,6 +43,19 @@ void Explorer::Unlock(EDirection direction)
 		door->SetIsOpen(true);
 	}
 
+}
+
+void Explorer::AddToLootList(Interactables* interactable)
+{
+}
+
+void Explorer::CheckForLoot()
+{
+	if (CurrentRoomLocation->GetRoomLoot())
+	{
+		CurrentRoomLocation->GetRoomLoot()->Interact(this);
+		CurrentRoomLocation->SetRoomLoot(NULL);
+	}
 }
 
 

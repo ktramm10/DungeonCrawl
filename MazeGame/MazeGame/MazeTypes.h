@@ -7,3 +7,7 @@ enum EDirection
 	ED_West,
 	ED_NULL,
 };
+enum EInteractables
+{
+	EI_Coin = 0,
+};

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="EnchantedMazeBuilder.cpp" />
     <ClCompile Include="EnchantedWall.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Coin.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="EnchantedMazeBuilder.h" />
     <ClInclude Include="EnchantedWall.h" />
@@ -151,6 +153,7 @@
     <ClInclude Include="GameMenus.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameWidgets.h" />
+    <ClInclude Include="Interactables.h" />
     <ClInclude Include="MapSite.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeBuilder.h" />
