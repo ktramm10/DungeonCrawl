@@ -66,7 +66,7 @@ Maze* CreateMaze(RandomMazeBuilder* builder, int numOfRooms)
 GameState* InitalizeGameComponents()
 {
 	RandomMazeBuilder* r_Builder = new RandomMazeBuilder();
-	Maze* gameMaze = CreateMaze(r_Builder, 10);
+	Maze* gameMaze = CreateMaze(r_Builder, 5);
 	Explorer* playerCharacter = new Explorer(gameMaze);
 	GameWidgets* gameWidgets = new GameWidgets(playerCharacter);
 	GameState* gamestate = new GameState(gameMaze, playerCharacter, gameWidgets);

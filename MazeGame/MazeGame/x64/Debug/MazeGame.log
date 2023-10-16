@@ -1,7 +1,2 @@
-﻿  Coin.cpp
-C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\MazeGame\Coin.cpp(10,68): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
+﻿  main.cpp
   MazeGame.vcxproj -> C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\x64\Debug\MazeGame.exe
