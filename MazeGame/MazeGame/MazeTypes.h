@@ -10,4 +10,6 @@ enum EDirection
 enum EInteractables
 {
 	EI_Coin = 0,
+	EI_Key = 1,
+	EI_Chest = 2,
 };

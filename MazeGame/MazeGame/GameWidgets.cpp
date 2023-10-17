@@ -16,6 +16,7 @@ void GameWidgets::DisplayHUD()
 	std::cout << "<<< Health Points: " << PlayerCharacter->GetHealth() << " >>>" << std::endl;
 	std::cout << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << " >>>" << std::endl;
 	std::cout << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "             >>>" << std::endl;
+	std::cout << "<<< Keys: " << PlayerCharacter->GetKeys() << "                     >>>" << std::endl;
 	std::cout << "///////////////////////////" << std::endl;
 	std::cout << std::endl;
 }

@@ -28,6 +28,8 @@ public:
 	std::vector<Interactables*> GetLootList() { return interactableLootList; }
 	int GetCoinsCollected() { return CoinsCollected; }
 	void SetCoinsCollected(int i) { CoinsCollected = i; }
+	int GetKeys() { return keys; }
+	void SetKeys(int i) { keys = i; }
 private:
 	Room* CurrentRoomLocation;
 	Maze* GameMaze;
@@ -38,4 +40,5 @@ private:
 	int maxMagicPoints = 100;
 	std::vector<Interactables*> interactableLootList;
 	int CoinsCollected;
+	int keys;
 };

@@ -11,6 +11,7 @@
 #include <chrono>
 #include "MazeTypes.h"
 #include "Coin.h"
+#include "Key.h"
 
 RandomMazeBuilder::RandomMazeBuilder()
 {
@@ -138,16 +139,20 @@ EDirection RandomMazeBuilder::SelectRandomSide(Room* room)
 
 Interactables* RandomMazeBuilder::GenerateRandomLoot()
 {
-	std::uniform_int_distribution<int> uni(0, 2);
-	switch (uni(eng))
+	std::uniform_int_distribution<int> uni(0,15);
+	int randomResult = uni(eng);
+	if (randomResult <= 2)
 	{
-	case 0:
 		return new Coin();
-		break;
-	default:
-		return 0;
-		break;
 	}
+	else if (randomResult >=  3 && randomResult <= 6)
+	{
+		return new Key();
+	}
+	else {
+		return NULL;
+	}
+
 }
 	
 

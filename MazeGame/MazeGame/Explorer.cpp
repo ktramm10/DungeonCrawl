@@ -13,6 +13,7 @@ Explorer::Explorer(Maze* maze)
 	health = maxHealth;
 	magicPoints = maxMagicPoints;
 	CoinsCollected = 0;
+	keys = 0;
 }
 void Explorer::SayLocation()
 {

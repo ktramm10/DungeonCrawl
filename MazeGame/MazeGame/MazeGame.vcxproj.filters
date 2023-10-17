@@ -69,6 +69,12 @@
     <ClCompile Include="Coin.cpp">
       <Filter>Source Files\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Key.cpp">
+      <Filter>Source Files\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Chest.cpp">
+      <Filter>Source Files\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Door.h">
@@ -123,6 +129,21 @@
       <Filter>Source Files\Public</Filter>
     </ClInclude>
     <ClInclude Include="Coin.h">
+      <Filter>Source Files\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Source Files\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Chest.h">
+      <Filter>Source Files\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Source Files\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapons.h">
+      <Filter>Source Files\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
       <Filter>Source Files\Public</Filter>
     </ClInclude>
   </ItemGroup>

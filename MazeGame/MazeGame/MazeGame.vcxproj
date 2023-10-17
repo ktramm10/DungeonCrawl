@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="EnchantedMazeBuilder.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="GameMenus.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameWidgets.cpp" />
+    <ClCompile Include="Key.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeBuilder.cpp" />
@@ -145,15 +147,19 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Chest.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="EnchantedMazeBuilder.h" />
     <ClInclude Include="EnchantedWall.h" />
+    <ClInclude Include="Equipment.h" />
     <ClInclude Include="Explorer.h" />
     <ClInclude Include="GameMenus.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameWidgets.h" />
     <ClInclude Include="Interactables.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="MapSite.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeBuilder.h" />
@@ -163,6 +169,7 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="StandardMazeBuilder.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Weapons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
