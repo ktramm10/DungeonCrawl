@@ -1,13 +1,2 @@
-﻿  RandomMazeBuilder.cpp
-C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\MazeGame\RandomMazeBuilder.cpp(19,68): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
-C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\MazeGame\RandomMazeBuilder.cpp(44,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\MazeGame\RandomMazeBuilder.cpp(81,59): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
+﻿  Explorer.cpp
   MazeGame.vcxproj -> C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\x64\Debug\MazeGame.exe

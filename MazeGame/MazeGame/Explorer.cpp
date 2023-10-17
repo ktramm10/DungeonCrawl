@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "GameState.h"
 #include "Interactables.h"
+#include "Sword.h"
 
 Explorer::Explorer(Maze* maze)
 {
@@ -14,6 +15,8 @@ Explorer::Explorer(Maze* maze)
 	magicPoints = maxMagicPoints;
 	CoinsCollected = 0;
 	keys = 0;
+	equippedWeapon = new Sword();
+	inventory.push_back(equippedWeapon);
 }
 void Explorer::SayLocation()
 {
@@ -30,6 +33,7 @@ void Explorer::Move(EDirection direction)
 {
 	if (direction != EDirection::ED_NULL)
 	{
+		system("cls");
 		CurrentRoomLocation->GetSide(direction)->Enter(this);
 		CheckForLoot();
 		SayLocation();

@@ -20,14 +20,16 @@
 Maze* CreateMaze(MazeBuilder* builder, int numOfRooms);
 GameState* InitalizeGameComponents();
 void GameLoop(GameState* game);
-EDirection InterpretInput(GameState* game);
+char GameInput();
+bool ValidateGameInput(char input);
+void InterpretGameInput(char input, GameState* game);
 void MainMenu(GameMenus* gameMenu);
 
 /*
 * Variables
 */
 
-bool isRunning = true;
+
 
 int main()
 {
@@ -76,21 +78,32 @@ GameState* InitalizeGameComponents()
 
 void GameLoop(GameState* game)
 {
+	char input;
+	bool ValidGameInput = false;
+
 	while (game->GetIsRunning() && game->GetPlayerCharacter()->GetHealth() > 0)
 	{
-		EDirection direction = ED_NULL;
 		game->GetGameWidgets()->DrawRoom(game->GetPlayerCharacter());
 		game->GetGameWidgets()->DisplayHUD();
-		while (direction == ED_NULL && game->GetIsRunning())
+		
+		while (!ValidGameInput)
 		{
-			direction = InterpretInput(game);
-			game->GetPlayerCharacter()->Move(direction);
+			input = GameInput();
+			if (ValidateGameInput(input))
+			{
+				break;
+			}
+			else
+			{
+				std::cout << "That was not a valid game input. Please try again..." << std::endl;
+			}
 		}
+		InterpretGameInput(input, game);
 	}
 	std::cout << "Game Over!" << std::endl;
 }
 
-EDirection InterpretInput(GameState* game)
+char GameInput()
 {
 	char input;
 	std::cout << "Enter your movement input." << std::endl;
@@ -98,40 +111,54 @@ EDirection InterpretInput(GameState* game)
 	std::cout << "S -> South" << std::endl;
 	std::cout << "E -> East" << std::endl;
 	std::cout << "W -> West" << std::endl;
+	std::cout << "I -> View Inventory" << std::endl;
 	std::cout << "Press Q to end the game." << std::endl;
 
 	std::cin >> input;
-	std::cout << std::endl;
-	std::cout << std::endl;
+	input = tolower(input);
+	return input;
 
 
-	if (input == 'N' || input == 'n')
+	
+}
+
+bool ValidateGameInput(char input)
+{
+	if (input == 'n' || input == 's' ||  input == 'w' || input == 'e'
+		|| input == 'q' || input == 'i')
 	{
-		return ED_North;
-	}
-	else if (input == 'S' || input == 's')
-	{
-		return ED_South;
-	}
-	else if (input == 'E' || input == 'e')
-	{
-		return ED_East;
-	}
-	else if (input == 'W' || input == 'w')
-	{
-		return ED_West;
-	}
-	else if (input == 'Q' || input == 'q')
-	{
-		game->SetIsRunning(false);
-		return ED_NULL;
+		return true;
 	}
 	else
 	{
-		std::cout << "That was not a valid input. Please try again." << std::endl;
-		std::cout << std::endl;
-		std::cout << std::endl;
-		return ED_NULL;
+		return false;
+	}
+}
+
+void InterpretGameInput(char input, GameState* game)
+{
+	
+	switch (input)
+	{
+	case 'n':
+		game->GetPlayerCharacter()->Move(ED_North);
+		break;
+	case 's':
+		game->GetPlayerCharacter()->Move(ED_South);
+		break;
+	case 'w':
+		game->GetPlayerCharacter()->Move(ED_West);
+		break;
+	case 'e':
+		game->GetPlayerCharacter()->Move(ED_East);
+		break;
+	case 'q':
+		game->SetIsRunning(false);
+		break;
+	case 'i':
+		game->GetGameWidgets()->ViewInventory();
+	default:
+		break;
 	}
 }
 

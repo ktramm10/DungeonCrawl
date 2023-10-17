@@ -4,6 +4,7 @@
 #include "Room.h"
 #include "MazeTypes.h"
 #include "GameState.h"
+#include "Sword.h"
 GameWidgets::GameWidgets(Explorer* e)
 {
 	PlayerCharacter = e;
@@ -12,12 +13,13 @@ GameWidgets::GameWidgets(Explorer* e)
 void GameWidgets::DisplayHUD()
 {
 	std::cout << std::endl;
-	std::cout << "///////////////////////////" << std::endl;
-	std::cout << "<<< Health Points: " << PlayerCharacter->GetHealth() << " >>>" << std::endl;
-	std::cout << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << " >>>" << std::endl;
-	std::cout << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "             >>>" << std::endl;
-	std::cout << "<<< Keys: " << PlayerCharacter->GetKeys() << "                     >>>" << std::endl;
-	std::cout << "///////////////////////////" << std::endl;
+	std::cout << "/////////////////////////////////////" << std::endl;
+	std::cout << "<<< Health Points: " << PlayerCharacter->GetHealth() << "      >>>" << std::endl;
+	std::cout << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << "      >>>" << std::endl;
+	std::cout << "<<< Equipped Weapon: " << PlayerCharacter->GetEquippedWeapon()->GetItemName() << "  >>>" << std::endl;
+	std::cout << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "                   >>>" << std::endl;
+	std::cout << "<<< Keys: " << PlayerCharacter->GetKeys() << "               >>>" << std::endl;
+	std::cout << "/////////////////////////////////////" << std::endl;
 	std::cout << std::endl;
 }
 
@@ -262,6 +264,20 @@ void GameWidgets::TitleCard()
 	std::cout << "///////////////////////////////////////////////////////////////////////" << std::endl;
 	std::cout << std::endl;
 
+
+}
+
+void GameWidgets::ViewInventory()
+{
+	system("cls");
+	std::cout << "INVENTORY: " << std::endl;
+	for (Items* item : PlayerCharacter->GetInventoryList())
+	{
+		std::cout << "<<< " << item->GetItemName() << " >>>" << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 
 }
 

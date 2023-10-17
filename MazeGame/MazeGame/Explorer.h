@@ -7,6 +7,10 @@ class Room;
 class Maze;
 class GameState;
 class Interactables;
+class Items;
+class Weapons;
+
+
 class Explorer
 {
 public:
@@ -16,8 +20,8 @@ public:
 	void Unlock(EDirection direction);
 	void AddToLootList(Interactables* interactable);
 	void CheckForLoot();
+	void AddToInventory(Items* item) { inventory.push_back(item); }
 public:
-	//Getters and Setters
 	Room* GetLocation() { return CurrentRoomLocation; }
 	Maze* GetMaze() { return GameMaze; }
 	void SetLocation(Room* r) { CurrentRoomLocation = r; }
@@ -30,6 +34,9 @@ public:
 	void SetCoinsCollected(int i) { CoinsCollected = i; }
 	int GetKeys() { return keys; }
 	void SetKeys(int i) { keys = i; }
+	Weapons* GetEquippedWeapon() { return equippedWeapon; }
+	void SetEquippedWeapon(Weapons* weapon) { equippedWeapon = weapon; }
+	std::vector<Items*> GetInventoryList() { return inventory; }
 private:
 	Room* CurrentRoomLocation;
 	Maze* GameMaze;
@@ -41,4 +48,6 @@ private:
 	std::vector<Interactables*> interactableLootList;
 	int CoinsCollected;
 	int keys;
+	std::vector<Items*> inventory;
+	Weapons* equippedWeapon;
 };

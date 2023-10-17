@@ -1,6 +1,7 @@
 #pragma once
 #include "Interactables.h"
 #include <iostream>
+#include "Items.h"
 
 class Chest : public Interactables
 {
@@ -15,4 +16,5 @@ public:
 protected:
 private:
 	bool isLocked;
+	Items* loot;
 };

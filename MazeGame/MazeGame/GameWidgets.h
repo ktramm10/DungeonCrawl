@@ -12,6 +12,7 @@ public:
 	void DisplayHUD();
 	void DrawRoom(Explorer* e);
 	void TitleCard();
+	void ViewInventory();
 protected:
 
 private:
