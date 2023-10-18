@@ -13,14 +13,15 @@ GameWidgets::GameWidgets(Explorer* e)
 void GameWidgets::DisplayHUD()
 {
 	std::cout << std::endl;
-	std::cout << "/////////////////////////////////////" << std::endl;
-	std::cout << "<<< Health Points: " << PlayerCharacter->GetHealth() << "      >>>" << std::endl;
-	std::cout << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << "      >>>" << std::endl;
-	std::cout << "<<< Equipped Weapon: " << PlayerCharacter->GetEquippedWeapon()->GetItemName() << "  >>>" << std::endl;
-	std::cout << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "                   >>>" << std::endl;
-	std::cout << "<<< Keys: " << PlayerCharacter->GetKeys() << "               >>>" << std::endl;
-	std::cout << "/////////////////////////////////////" << std::endl;
+	std::cout << "Enter your movement input.     " << "/////////////////////////////////////" << std::endl;
+	std::cout << "N -> North                     " << "<<< Health Points: " << PlayerCharacter->GetHealth() << "      >>>" << std::endl;
+	std::cout << "S -> South                     " << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << "      >>>" << std::endl;
+	std::cout << "E -> East                      " << "<<< Equipped Weapon: " << PlayerCharacter->GetEquippedWeapon()->GetItemName() << "  >>>" << std::endl;
+	std::cout << "W -> West                      " << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "                   >>>" << std::endl;
+	std::cout << "I -> View Inventory            " << "<<< Keys: " << PlayerCharacter->GetKeys() << "                 >>>" << std::endl;
+	std::cout << "Press Q to end the game.       " << "/////////////////////////////////////" << std::endl;
 	std::cout << std::endl;
+
 }
 
 void GameWidgets::DrawRoom(Explorer* e)

@@ -106,14 +106,6 @@ void GameLoop(GameState* game)
 char GameInput()
 {
 	char input;
-	std::cout << "Enter your movement input." << std::endl;
-	std::cout << "N -> North" << std::endl;
-	std::cout << "S -> South" << std::endl;
-	std::cout << "E -> East" << std::endl;
-	std::cout << "W -> West" << std::endl;
-	std::cout << "I -> View Inventory" << std::endl;
-	std::cout << "Press Q to end the game." << std::endl;
-
 	std::cin >> input;
 	input = tolower(input);
 	return input;
