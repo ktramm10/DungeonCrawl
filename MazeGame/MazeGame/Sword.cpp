@@ -1,5 +1,6 @@
 #include "Sword.h"
 #include <iostream>
+#include "RNG.h"
 
 Sword::Sword()
 {
@@ -7,7 +8,4 @@ Sword::Sword()
 	SetWeaponDamage(SwordDamage);
 }
 
-void Sword::Attack(Enemy* target)
-{
-	
-}
+

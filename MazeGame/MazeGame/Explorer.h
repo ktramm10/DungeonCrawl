@@ -37,6 +37,8 @@ public:
 	Weapons* GetEquippedWeapon() { return equippedWeapon; }
 	void SetEquippedWeapon(Weapons* weapon) { equippedWeapon = weapon; }
 	std::vector<Items*> GetInventoryList() { return inventory; }
+	int GetArmorClass() { return armorClass; }
+	void SetArmorClass(int i) { armorClass = i; }
 private:
 	Room* CurrentRoomLocation;
 	Maze* GameMaze;
@@ -50,4 +52,5 @@ private:
 	int keys;
 	std::vector<Items*> inventory;
 	Weapons* equippedWeapon;
+	int armorClass = 12;
 };

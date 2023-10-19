@@ -8,6 +8,7 @@ class Coin : public Interactables
 public:
 	Coin();
 	virtual void Interact(Explorer* e) override;
+	void RandomizeNumOfCoins();
 	
 protected:
 private:

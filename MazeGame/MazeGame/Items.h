@@ -6,7 +6,7 @@
 class Items
 {
 public:
-	virtual void EquipItem() {}
+	virtual void EquipItem(Explorer* e) {}
 	virtual void AddToInventory(Explorer* e) {}
 	EItemTypes GetItemID() { return ItemID; }
 	void SetItemID(EItemTypes type) { ItemID = type; }

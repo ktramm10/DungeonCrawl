@@ -5,7 +5,7 @@ Equipment::Equipment()
 	SetItemID(EItemTypes::EI_Equipment);
 }
 
-void Equipment::EquipItem()
+void Equipment::EquipItem(Explorer* e)
 {
 
 }

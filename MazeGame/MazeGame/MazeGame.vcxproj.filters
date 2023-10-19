@@ -19,150 +19,207 @@
     <Filter Include="Source Files\Private">
       <UniqueIdentifier>{5feb3578-20c3-4330-9081-b0215b15453f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Public\Interactables">
+      <UniqueIdentifier>{f21721b6-3bcf-43f6-84b2-e17a1a90bce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Public\Items">
+      <UniqueIdentifier>{c15d65f0-a8c5-4c28-b85d-14c26d65e323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Public\Maze">
+      <UniqueIdentifier>{c5d714d8-ecee-4e5d-92a3-dcd4298f08f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Public\Game">
+      <UniqueIdentifier>{3eb13341-a10c-480d-8421-aee5d3d51176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Public\Pawn">
+      <UniqueIdentifier>{9b823fb6-dc7e-4ace-9eef-248c39534f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Private\Interactables">
+      <UniqueIdentifier>{6c4cf7c1-af09-481c-b6c6-eeaa91243871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Private\Items">
+      <UniqueIdentifier>{c9e3d146-36fb-4a32-9164-ccd1adfd2ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Private\Maze">
+      <UniqueIdentifier>{818deecb-1c9f-4db2-b8f3-43c1565c0ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Private\Game">
+      <UniqueIdentifier>{3a51a1d9-a07d-426f-8f80-4bf1129980b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Private\Pawn">
+      <UniqueIdentifier>{5eed2a49-b60d-4477-8230-138d64ec5598}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Door.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Maze.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Room.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Wall.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Explorer.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="MazeFactory.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="StandardMazeBuilder.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="MazeBuilder.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="EnchantedWall.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="EnchantedMazeBuilder.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="GameWidgets.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMenus.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="RandomMazeBuilder.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>Source Files\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="Key.cpp">
-      <Filter>Source Files\Private</Filter>
+    <ClCompile Include="Axe.cpp">
+      <Filter>Source Files\Private\Items</Filter>
     </ClCompile>
     <ClCompile Include="Chest.cpp">
-      <Filter>Source Files\Private</Filter>
+      <Filter>Source Files\Private\Interactables</Filter>
     </ClCompile>
-    <ClCompile Include="Weapons.cpp">
-      <Filter>Source Files\Private</Filter>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Source Files\Private\Interactables</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="EnchantedMazeBuilder.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="EnchantedWall.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Private\Pawn</Filter>
     </ClCompile>
     <ClCompile Include="Equipment.cpp">
-      <Filter>Source Files\Private</Filter>
+      <Filter>Source Files\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Explorer.cpp">
+      <Filter>Source Files\Private\Pawn</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenus.cpp">
+      <Filter>Source Files\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Source Files\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWidgets.cpp">
+      <Filter>Source Files\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Key.cpp">
+      <Filter>Source Files\Private\Interactables</Filter>
+    </ClCompile>
+    <ClCompile Include="Mace.cpp">
+      <Filter>Source Files\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeBuilder.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeFactory.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>Source Files\Private\Pawn</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomMazeBuilder.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="RNG.cpp">
+      <Filter>Source Files\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardMazeBuilder.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
     </ClCompile>
     <ClCompile Include="Sword.cpp">
-      <Filter>Source Files\Private</Filter>
+      <Filter>Source Files\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\Private\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapons.cpp">
+      <Filter>Source Files\Private\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Door.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="MapSite.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Maze.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Room.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeTypes.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Explorer.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeFactory.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeBuilder.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="StandardMazeBuilder.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="EnchantedMazeBuilder.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="EnchantedWall.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="GameWidgets.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMenus.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomMazeBuilder.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
     <ClInclude Include="Interactables.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Interactables</Filter>
     </ClInclude>
     <ClInclude Include="Coin.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Key.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Interactables</Filter>
     </ClInclude>
     <ClInclude Include="Chest.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Interactables</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Source Files\Public\Interactables</Filter>
     </ClInclude>
     <ClInclude Include="Items.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapons.h">
-      <Filter>Source Files\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Equipment.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Items</Filter>
     </ClInclude>
     <ClInclude Include="ItemTypes.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Mace.h">
+      <Filter>Source Files\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapons.h">
+      <Filter>Source Files\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>Source Files\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Axe.h">
+      <Filter>Source Files\Public\Items</Filter>
     </ClInclude>
     <ClInclude Include="Sword.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="EnchantedMazeBuilder.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="EnchantedWall.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSite.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeBuilder.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeFactory.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeTypes.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomMazeBuilder.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Source Files\Public\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenus.h">
+      <Filter>Source Files\Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Source Files\Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWidgets.h">
+      <Filter>Source Files\Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RNG.h">
+      <Filter>Source Files\Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardMazeBuilder.h">
+      <Filter>Source Files\Public\Maze</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>Source Files\Public</Filter>
+      <Filter>Source Files\Public\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="Explorer.h">
+      <Filter>Source Files\Public\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>Source Files\Public\Pawn</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

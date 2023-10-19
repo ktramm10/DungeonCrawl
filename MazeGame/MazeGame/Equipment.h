@@ -5,7 +5,7 @@ class Equipment : public Items
 {
 public:
 	Equipment();
-	virtual void EquipItem() override;
+	virtual void EquipItem(Explorer* e) override;
 	virtual void AddToInventory(Explorer* e) override;
 protected:
 

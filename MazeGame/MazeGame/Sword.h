@@ -4,10 +4,8 @@
 class Sword : public Weapons
 {
 public:
-	Sword();
-	virtual void Attack(Enemy* target) override;
+	Sword();	
 protected:
-
 private:
 	int SwordDamage = 10;
 };

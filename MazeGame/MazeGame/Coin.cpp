@@ -17,4 +17,13 @@ void Coin::Interact(Explorer* e)
 	numOfCoins = uni(eng);
 	e->SetCoinsCollected(currentCoins += numOfCoins);
 	std::cout << "You found " << numOfCoins << " coins!" << std::endl;
+	delete this;
 }
+
+void Coin::RandomizeNumOfCoins()
+{
+	std::uniform_int_distribution<int> uni(1, 10);
+	numOfCoins = uni(eng);
+}
+
+

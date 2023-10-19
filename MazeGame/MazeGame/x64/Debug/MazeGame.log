@@ -1,2 +1,7 @@
-﻿  GameWidgets.cpp
+﻿  Chest.cpp
+C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\MazeGame\Chest.cpp(12,68): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
   MazeGame.vcxproj -> C:\Users\battl\OneDrive\Documents\GitHub\DungeonCrawl\MazeGame\x64\Debug\MazeGame.exe

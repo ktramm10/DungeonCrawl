@@ -6,7 +6,7 @@
 #include "GameState.h"
 #include "Interactables.h"
 #include "Sword.h"
-
+#include "Chest.h"
 Explorer::Explorer(Maze* maze)
 {
 	GameMaze = maze;
@@ -59,7 +59,11 @@ void Explorer::CheckForLoot()
 	if (CurrentRoomLocation->GetRoomLoot())
 	{
 		CurrentRoomLocation->GetRoomLoot()->Interact(this);
-		CurrentRoomLocation->SetRoomLoot(NULL);
+		if (!static_cast<Chest*>(CurrentRoomLocation->GetRoomLoot()))
+		{
+			CurrentRoomLocation->SetRoomLoot(NULL);
+		}
+		
 	}
 }
 

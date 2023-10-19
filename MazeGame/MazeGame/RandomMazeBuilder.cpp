@@ -12,6 +12,7 @@
 #include "MazeTypes.h"
 #include "Coin.h"
 #include "Key.h"
+#include "Chest.h"
 
 RandomMazeBuilder::RandomMazeBuilder()
 {
@@ -148,6 +149,10 @@ Interactables* RandomMazeBuilder::GenerateRandomLoot()
 	else if (randomResult >=  3 && randomResult <= 6)
 	{
 		return new Key();
+	}
+	else if (randomResult >= 7 && randomResult <= 10)
+	{
+		return new Chest();
 	}
 	else {
 		return NULL;

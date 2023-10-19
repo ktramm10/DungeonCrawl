@@ -20,7 +20,7 @@ void GameWidgets::DisplayHUD()
 	std::cout << "W -> West                      " << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "                   >>>" << std::endl;
 	std::cout << "I -> View Inventory            " << "<<< Keys: " << PlayerCharacter->GetKeys() << "                 >>>" << std::endl;
 	std::cout << "Press Q to end the game.       " << "/////////////////////////////////////" << std::endl;
-	std::cout << std::endl;
+	
 
 }
 
