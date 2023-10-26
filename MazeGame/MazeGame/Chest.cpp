@@ -5,9 +5,28 @@
 #include "Sword.h"
 #include "Axe.h"
 #include "Mace.h"
+#include "Room.h"
 
 Chest::Chest()
 {
+	rng = new RNG();
+	eng.seed(std::chrono::system_clock::now().time_since_epoch().count());
+	switch (rng->GetNumInRange(1, 3))
+	{
+	case 1:
+		loot = new Sword();
+		break;
+	case 2:
+		loot = new Mace();
+		break;
+	case 3:
+		loot = new Axe();
+		break;
+	}
+}
+Chest::Chest(Room* room)
+{
+	owningRoom = room;
 	rng = new RNG();
 	eng.seed(std::chrono::system_clock::now().time_since_epoch().count());
 	switch (rng->GetNumInRange(1, 3))
@@ -57,6 +76,10 @@ void Chest::Interact(Explorer* e)
 	if (input._Equal("Y") || input._Equal("y"))
 	{
 		OpenChest(e);
+
+	}
+	else {
+
 	}
 	
 }
@@ -69,7 +92,9 @@ void Chest::OpenChest(Explorer* e)
 		{
 			int currentKeys = e->GetKeys();
 			e->SetKeys(currentKeys -= 1);
+			std::cout << "You use a key to open the chest." << std::endl;
 			std::cout << "You open the chest and find a " << loot->GetItemName() << ". You add it to your inventory." << std::endl;
+			loot = 0;
 		}
 		else
 		{
@@ -81,17 +106,18 @@ void Chest::OpenChest(Explorer* e)
 	{
 		std::cout << "You open the chest and find a " << loot->GetItemName() << ". You add it to your inventory." << std::endl;
 		e->AddToInventory(loot);
+		loot = 0;
+		owningRoom->SetRoomLoot(0);
+
 	}
 }
 
 bool Chest::ValidateInput(std::string str)
 {
-	if (str._Equal("Y") || str._Equal("y") || str._Equal("N") || str._Equal("n"))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return str._Equal("Y") || str._Equal("y") || str._Equal("N") || str._Equal("n");
+}
+
+bool Chest::HasLoot()
+{
+	return loot;
 }

@@ -13,6 +13,8 @@
 #include "Coin.h"
 #include "Key.h"
 #include "Chest.h"
+#include "Orc.h"
+#include "Enemy.h"
 
 RandomMazeBuilder::RandomMazeBuilder()
 {
@@ -27,7 +29,9 @@ void RandomMazeBuilder::BuildMaze()
 
 void RandomMazeBuilder::BuildRoom()
 {
-	Room* newRoom = new Room(currentMaze->nextRoomNumber, GenerateRandomLoot());
+	Room* newRoom = new Room(currentMaze->nextRoomNumber);
+	newRoom->SetRoomLoot(GenerateRandomLoot(newRoom));
+	newRoom->SetEnemy(GenerateRandomEnemy());
 	currentMaze->AddRoom(newRoom);
 	
 	newRoom->SetSide(ED_North, new Wall);
@@ -36,6 +40,11 @@ void RandomMazeBuilder::BuildRoom()
 	newRoom->SetSide(ED_West, new Wall);
 
 	currentMaze->nextRoomNumber += 1;
+	if (currentMaze->nextRoomNumber - 1 == 1)
+	{
+		newRoom->SetRoomLoot(0);
+		newRoom->SetEnemy(0);
+	}
 }
 
 void RandomMazeBuilder::BuildRandomDoor()
@@ -138,26 +147,41 @@ EDirection RandomMazeBuilder::SelectRandomSide(Room* room)
 	return directionResult;
 }
 
-Interactables* RandomMazeBuilder::GenerateRandomLoot()
+Interactables* RandomMazeBuilder::GenerateRandomLoot(Room* room)
 {
 	std::uniform_int_distribution<int> uni(0,15);
 	int randomResult = uni(eng);
 	if (randomResult <= 2)
 	{
-		return new Coin();
+		return new Coin(room);
 	}
 	else if (randomResult >=  3 && randomResult <= 6)
 	{
-		return new Key();
+		return new Key(room);
 	}
 	else if (randomResult >= 7 && randomResult <= 10)
 	{
-		return new Chest();
+		return new Chest(room);
 	}
 	else {
 		return NULL;
 	}
 
+}
+
+Enemy* RandomMazeBuilder::GenerateRandomEnemy()
+{
+	std::uniform_int_distribution<int> uni(1, 2);
+	if (uni(eng) == 1)
+	{
+		std::cout << "This room has an orc." << std::endl;
+		return new Orc();
+	}
+	else
+	{
+		std::cout << "This Room has no enemy." << std::endl;
+		return NULL;
+	}
 }
 	
 

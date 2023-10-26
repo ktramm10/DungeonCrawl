@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 enum EDirection;
+class RNG;
 class Room;
 class Maze;
 class GameState;
@@ -21,6 +22,7 @@ public:
 	void AddToLootList(Interactables* interactable);
 	void CheckForLoot();
 	void AddToInventory(Items* item) { inventory.push_back(item); }
+	void Attack();
 public:
 	Room* GetLocation() { return CurrentRoomLocation; }
 	Maze* GetMaze() { return GameMaze; }
@@ -39,6 +41,8 @@ public:
 	std::vector<Items*> GetInventoryList() { return inventory; }
 	int GetArmorClass() { return armorClass; }
 	void SetArmorClass(int i) { armorClass = i; }
+	bool GetInCombat() { return inCombat; }
+	void SetInCombat(bool b) { inCombat = b; }
 private:
 	Room* CurrentRoomLocation;
 	Maze* GameMaze;
@@ -53,4 +57,7 @@ private:
 	std::vector<Items*> inventory;
 	Weapons* equippedWeapon;
 	int armorClass = 12;
+	bool inCombat = false;
+	int attackModifier = 5;
+	RNG* rng;
 };

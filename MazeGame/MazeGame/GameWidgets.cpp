@@ -5,6 +5,7 @@
 #include "MazeTypes.h"
 #include "GameState.h"
 #include "Sword.h"
+#include "Enemy.h"
 GameWidgets::GameWidgets(Explorer* e)
 {
 	PlayerCharacter = e;
@@ -279,6 +280,40 @@ void GameWidgets::ViewInventory()
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
+
+}
+
+void GameWidgets::CombatUI()
+{
+	system("cls");
+	std::cout << "/////////////////////////////////////" << "           " << "/////////////////////////////////////" << std::endl;
+	std::cout << "<<< Health Points: " << PlayerCharacter->GetHealth() << "                         " << "   <<< Enemy: " << PlayerCharacter->GetLocation()->GetEnemy()->GetEnemyName() << std::endl;
+	std::cout << "<<< Magic Points:  " << PlayerCharacter->GetMagicPoints() << "                         " << "   <<< Enemy HP: " << PlayerCharacter->GetLocation()->GetEnemy()->GetHealth() << std::endl;
+	std::cout << "<<< Equipped Weapon: " << PlayerCharacter->GetEquippedWeapon()->GetItemName() << "                      " << "<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>" << std::endl;
+	std::cout << "<<< GP: " << PlayerCharacter->GetCoinsCollected() << "           " << std::endl;
+	std::cout << "<<< Keys: " << PlayerCharacter->GetKeys() << "           " << std::endl;
+	std::cout << "/////////////////////////////////////" << "           " << "/////////////////////////////////////" << std::endl;
+	std::cout << "Make Your Action... " << std::endl;
+	std::cout << "1. Attack With Equipped Weapon" << std::endl;
+	std::cout << "2. Run" << std::endl;
+}
+
+void GameWidgets::DrawOrcSprite()
+{
+	std::cout << "           _ " << std::endl;
+	std::cout << "          / |" << std::endl;
+	std::cout << "    ___   |||" << std::endl;
+	std::cout << "  _/___\\_ |||" << std::endl;
+	std::cout << " _\\\\___//_|||" << std::endl;
+	std::cout << "/. \\/_\\/ .|||" << std::endl;
+	std::cout << "\\__\\__ . [___]" << std::endl;
+	std::cout << "|-   -|. [_ -\\" << std::endl;
+	std::cout << "\\ {/} /_/ \\__/" << std::endl;
+	std::cout << " \\___/=]|]    " << std::endl;
+	std::cout << " ||  /\\  ||   " << std::endl;
+	std::cout << " ([]|   |[])  " << std::endl;
+	std::cout << " |_ |   | _|  " << std::endl;
+	std::cout << "[___|   |___] " << std::endl;
 
 }
 

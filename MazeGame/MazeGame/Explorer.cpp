@@ -7,6 +7,10 @@
 #include "Interactables.h"
 #include "Sword.h"
 #include "Chest.h"
+#include "Key.h"
+#include "Coin.h"
+#include "RNG.h"
+#include "Enemy.h"
 Explorer::Explorer(Maze* maze)
 {
 	GameMaze = maze;
@@ -17,6 +21,7 @@ Explorer::Explorer(Maze* maze)
 	keys = 0;
 	equippedWeapon = new Sword();
 	inventory.push_back(equippedWeapon);
+	rng = new RNG();
 }
 void Explorer::SayLocation()
 {
@@ -35,8 +40,8 @@ void Explorer::Move(EDirection direction)
 	{
 		system("cls");
 		CurrentRoomLocation->GetSide(direction)->Enter(this);
-		CheckForLoot();
 		SayLocation();
+
 	}
 }
 
@@ -59,12 +64,36 @@ void Explorer::CheckForLoot()
 	if (CurrentRoomLocation->GetRoomLoot())
 	{
 		CurrentRoomLocation->GetRoomLoot()->Interact(this);
-		if (!static_cast<Chest*>(CurrentRoomLocation->GetRoomLoot()))
-		{
-			CurrentRoomLocation->SetRoomLoot(NULL);
-		}
-		
 	}
 }
+
+void Explorer::Attack()
+{
+	if (CurrentRoomLocation->GetEnemy())
+	{
+		int hitResult = rng->GetNumInRange(1, 20);
+		if (hitResult + attackModifier >= CurrentRoomLocation->GetEnemy()->GetArmorClass())
+		{
+			std::cout << "You swing your " << equippedWeapon->GetItemName() << " at the target dealing " << equippedWeapon->GetWeaponDamage() << " damage!" << std::endl;
+			if (CurrentRoomLocation->GetEnemy()->GetHealth() > 0)
+			{
+				CurrentRoomLocation->GetEnemy()->SetHealth(CurrentRoomLocation->GetEnemy()->GetHealth() - equippedWeapon->GetWeaponDamage());
+				if (CurrentRoomLocation->GetEnemy()->GetHealth() <= 0)
+				{
+					CurrentRoomLocation->GetEnemy()->SetIsAlive(false);
+					CurrentRoomLocation->GetEnemy()->Die();
+					CurrentRoomLocation->SetEnemy(0);
+					SetInCombat(false);
+				}
+			}
+		}
+		else
+		{
+			std::cout << "You swung at the target and missed!" << std::endl;
+		}
+	}
+
+}
+
 
 

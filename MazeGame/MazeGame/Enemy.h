@@ -1,7 +1,8 @@
 #pragma once
 #include "Explorer.h"
-#include "Coin.h"
 #include <string>
+
+class Coin;
 
 class Enemy {
 public:
@@ -19,7 +20,7 @@ public:
 private:
 	int health;
 	Coin* loot;
-	bool isAlive;
+	bool isAlive = true;
 	int armorClass;
 	std::string EnemyName;
 };

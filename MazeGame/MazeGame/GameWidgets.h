@@ -13,6 +13,8 @@ public:
 	void DrawRoom(Explorer* e);
 	void TitleCard();
 	void ViewInventory();
+	void CombatUI();
+	void DrawOrcSprite();
 protected:
 
 private:

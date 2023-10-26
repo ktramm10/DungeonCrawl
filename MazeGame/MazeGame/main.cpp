@@ -12,6 +12,7 @@
 #include"GameState.h"
 #include"GameMenus.h"
 #include"RandomMazeBuilder.h"
+#include"Enemy.h"
 
 /*
 * Function Prototyping
@@ -24,6 +25,11 @@ char GameInput();
 bool ValidateGameInput(char input);
 void InterpretGameInput(char input, GameState* game);
 void MainMenu(GameMenus* gameMenu);
+void CombatLoop(GameState* game);
+void ActionSelect(GameState* game);
+int CombatInput();
+bool ValidateCombatInput(int input);
+void InterpretCombatInput(int input, GameState* game);
 
 /*
 * Variables
@@ -38,9 +44,6 @@ int main()
 	currentGame->GetGameWidgets()->TitleCard();
 	MainMenu(gameMenus);
 	GameLoop(currentGame);
-
-	
-
 }
 
 Maze* CreateMaze(RandomMazeBuilder* builder, int numOfRooms)
@@ -99,6 +102,16 @@ void GameLoop(GameState* game)
 			}
 		}
 		InterpretGameInput(input, game);
+		if (game->GetPlayerCharacter()->GetLocation()->GetEnemy())
+		{
+			game->GetPlayerCharacter()->SetInCombat(true);
+			CombatLoop(game);
+		}
+		if (game->GetPlayerCharacter()->GetLocation()->GetRoomLoot())
+		{
+			game->GetPlayerCharacter()->CheckForLoot();
+			
+		}
 	}
 	std::cout << "Game Over!" << std::endl;
 }
@@ -109,22 +122,11 @@ char GameInput()
 	std::cin >> input;
 	input = tolower(input);
 	return input;
-
-
-	
 }
 
 bool ValidateGameInput(char input)
 {
-	if (input == 'n' || input == 's' ||  input == 'w' || input == 'e'
-		|| input == 'q' || input == 'i')
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return input == 'n' || input == 's' || input == 'w' || input == 'e' || input == 'q' || input == 'i';
 }
 
 void InterpretGameInput(char input, GameState* game)
@@ -167,4 +169,83 @@ void MainMenu(GameMenus* gameMenu)
 		exit(0);
 	}
 	gameMenu->SetIsValid(false);
-}	
+}
+void CombatLoop(GameState* game)
+{
+	while (game->GetIsRunning() && game->GetPlayerCharacter()->GetInCombat() && game->GetPlayerCharacter()->GetHealth() > 0)
+	{
+		game->GetGameWidgets()->CombatUI();
+		game->GetGameWidgets()->DrawOrcSprite();
+		int input;
+		bool ValidInput = false;
+		while (!ValidInput)
+		{
+			std::cout << "IN SECOND WHILE LOOP" << std::endl;
+			input = CombatInput();
+			if (ValidateCombatInput(input))
+			{
+				break;
+			}
+			else
+			{
+				std::cout << "This input was not valid please try again." << std::endl;
+			}
+		}
+		InterpretCombatInput(input, game);
+		if (game->GetPlayerCharacter()->GetLocation()->GetEnemy())
+		{
+			game->GetPlayerCharacter()->GetLocation()->GetEnemy()->Attack(game->GetPlayerCharacter());
+			system("pause");
+		}
+		else
+		{
+			system("pause");
+		}
+	}
+}
+
+void ActionSelect(GameState* game)
+{
+	int input;
+	bool ValidGameInput = false;
+	while (!ValidateGameInput)
+	{
+		input = CombatInput();
+		if (ValidateCombatInput(input))
+		{
+			break;
+		}
+		else
+		{
+			std::cout << "This input was not valid please try again." << std::endl;
+		}
+		InterpretCombatInput(input, game);
+	}
+
+}
+
+int CombatInput()
+{
+	int input;
+	std::cin >> input;
+	return input;
+}
+
+bool ValidateCombatInput(int input)
+{
+	return input == 1 || input == 2;
+}
+
+void InterpretCombatInput(int input, GameState* game)
+{
+	switch (input)
+	{
+	case 1:
+		game->GetPlayerCharacter()->Attack();
+		break;
+	case 2:
+		std::cout << "THIS DOES NOTHING RIGHT NOW" << std::endl;
+		break;
+	}
+		
+}

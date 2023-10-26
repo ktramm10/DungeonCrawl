@@ -2,6 +2,7 @@
 #include "Door.h"
 #include "Wall.h"
 #include <typeinfo>
+#include "Enemy.h"
 
 Room::Room(int roomNo)
 {
@@ -13,6 +14,14 @@ Room::Room(int roomNo, Interactables* loot)
 	roomNumber = roomNo;
 	roomLoot = loot;
 }
+
+Room::Room(int roomNo, Interactables* loot, Enemy* theEnemy)
+{
+	roomNumber = roomNo;
+	roomLoot = loot;
+	enemy = theEnemy;
+}
+
 
 Mapsite* Room::GetSide(EDirection e) const
 {
