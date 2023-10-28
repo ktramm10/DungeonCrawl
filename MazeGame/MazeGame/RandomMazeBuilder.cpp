@@ -153,15 +153,15 @@ Interactables* RandomMazeBuilder::GenerateRandomLoot(Room* room)
 	int randomResult = uni(eng);
 	if (randomResult <= 2)
 	{
-		return new Coin(room);
+		return new Chest(room);
 	}
 	else if (randomResult >=  3 && randomResult <= 6)
 	{
-		return new Key(room);
+		return new Coin(room);
 	}
 	else if (randomResult >= 7 && randomResult <= 10)
 	{
-		return new Chest(room);
+		return new Key(room);
 	}
 	else {
 		return NULL;

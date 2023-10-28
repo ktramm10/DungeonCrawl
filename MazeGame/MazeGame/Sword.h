@@ -7,5 +7,5 @@ public:
 	Sword();	
 protected:
 private:
-	int SwordDamage = 10;
+	int SwordDamage = 25;
 };

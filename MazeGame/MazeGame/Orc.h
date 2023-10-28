@@ -12,7 +12,7 @@ public:
 protected:
 private:
 	const int attackDamage = 10;
-	const int orcMaxHealth = 100;
+	const int orcMaxHealth = 60;
 	const int armorClass = 10;
 	RNG* rng;
 };

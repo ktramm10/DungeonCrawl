@@ -71,7 +71,7 @@ Maze* CreateMaze(RandomMazeBuilder* builder, int numOfRooms)
 GameState* InitalizeGameComponents()
 {
 	RandomMazeBuilder* r_Builder = new RandomMazeBuilder();
-	Maze* gameMaze = CreateMaze(r_Builder, 5);
+	Maze* gameMaze = CreateMaze(r_Builder, 10);
 	Explorer* playerCharacter = new Explorer(gameMaze);
 	GameWidgets* gameWidgets = new GameWidgets(playerCharacter);
 	GameState* gamestate = new GameState(gameMaze, playerCharacter, gameWidgets);
@@ -180,7 +180,6 @@ void CombatLoop(GameState* game)
 		bool ValidInput = false;
 		while (!ValidInput)
 		{
-			std::cout << "IN SECOND WHILE LOOP" << std::endl;
 			input = CombatInput();
 			if (ValidateCombatInput(input))
 			{
@@ -200,6 +199,7 @@ void CombatLoop(GameState* game)
 		else
 		{
 			system("pause");
+			system("cls");
 		}
 	}
 }
